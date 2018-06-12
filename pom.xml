@@ -7,27 +7,60 @@
         <version>1.0.0</version>
     </parent>
 
-    <groupId>com.kalix.common</groupId>
-    <artifactId>common-parent</artifactId>
-    <name>Kalix Common Parent</name>
-    <version>1.0.1-SNAPSHOT</version>
+    <groupId>com.kalix.educational</groupId>
+    <artifactId>educational-parent</artifactId>
+    <name>Kalix Educational Parent</name>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <scm>
-        <connection>scm:git:https://github.com/chenyanxu/common-parent.git</connection>
-        <developerConnection>scm:git:https://github.com/chenyanxu/common-parent.git</developerConnection>
+        <connection>scm:git:https://github.com/chenyanxu/educational-parent.git</connection>
+        <developerConnection>scm:git:https://github.com/chenyanxu/educational-parent.git</developerConnection>
       <tag>HEAD</tag>
-  </scm>
+    </scm>
 
-    <modules>
-        <module>core-parent</module>
-        <module>system-parent</module>
-        <module>karaf-features</module>
-        <module>news-parent</module>
-        <module>note-parent</module>
-        <module>message-parent</module>
-        <module>address-parent</module>
-    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.kalix.framework.poms</groupId>
+                <artifactId>framework-poms-dm</artifactId>
+                <version>${project.framework.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.kalix.framework.core</groupId>
+                <artifactId>framework-core-api</artifactId>
+                <version>${project.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kalix.framework.core</groupId>
+                <artifactId>framework-core-impl</artifactId>
+                <version>${project.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kalix.admin.core</groupId>
+                <artifactId>admin-core-api</artifactId>
+                <version>${project.admin.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.kalix.framework.core</groupId>
+            <artifactId>framework-core-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.kalix.framework.core</groupId>
+            <artifactId>framework-core-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.kalix.admin.core</groupId>
+            <artifactId>admin-core-api</artifactId>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -41,49 +74,31 @@
             </plugin>
         </plugins>
         <extensions>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-webdav-jackrabbit</artifactId>
-        <version>2.10</version>
-      </extension>
-    </extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <version>2.10</version>
+            </extension>
+        </extensions>
     </build>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.kalix.framework.poms</groupId>
-                <artifactId>framework-poms-dm</artifactId>
-                <version>${project.framework.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>com.kalix.framework.poms</groupId>
-            <artifactId>framework-poms-dm</artifactId>
-            <type>pom</type>
-            <version>${project.framework.version}</version>
-        </dependency>
+    <modules>
+        <module>information-parent</module>
+        <module>core-parent</module>
+        <module>system-parent</module>
+    </modules>
 
-        <dependency>
-            <groupId>com.kalix.framework.core</groupId>
-            <artifactId>framework-core-api</artifactId>
-        </dependency>
-    </dependencies>
     <!--<reporting>-->
-    <!--<plugins>-->
-      <!--<plugin>-->
-        <!--<artifactId>maven-javadoc-plugin</artifactId>-->
-        <!--<version>2.10.3</version>-->
-        <!--<configuration>-->
-          <!--<detectLinks>true</detectLinks>-->
-          <!--<detectJavaApiLink>true</detectJavaApiLink>-->
-          <!--<linksource>true</linksource>-->
-        <!--</configuration>-->
-      <!--</plugin>-->
-    <!--</plugins>-->
-  <!--</reporting>-->
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+                <!--<version>2.10.3</version>-->
+                <!--<configuration>-->
+                    <!--<detectLinks>true</detectLinks>-->
+                    <!--<detectJavaApiLink>true</detectJavaApiLink>-->
+                    <!--<linksource>true</linksource>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+    <!--</reporting>-->
 </project>
