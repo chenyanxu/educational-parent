@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>educational-parent</artifactId>
+        <groupId>com.kalix.educational</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>information-parent</artifactId>
+    <groupId>com.kalix.educational.information</groupId>
+    <name>Kalix Educational Information Parent</name>
+    <packaging>pom</packaging>
+
+
+    <modules>
+        <module>educational-information-entities</module>
+        <module>educational-information-api</module>
+        <module>educational-information-biz</module>
+        <module>educational-information-dao</module>
+        <module>educational-information-rest</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.kalix.educational.information</groupId>
+                <artifactId>educational-information-entities</artifactId>
+                <version>${project.educational.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kalix.educational.information</groupId>
+                <artifactId>educational-information-api</artifactId>
+                <version>${project.educational.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
