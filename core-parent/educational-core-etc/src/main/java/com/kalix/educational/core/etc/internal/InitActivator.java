@@ -1,4 +1,4 @@
-package com.kalix.common.core.etc.internal;
+package com.kalix.educational.core.etc.internal;
 
 import com.kalix.framework.core.api.osgi.BaseBundleActivator;
 
@@ -7,4 +7,3 @@ import com.kalix.framework.core.api.osgi.BaseBundleActivator;
  */
 public class InitActivator extends BaseBundleActivator {
 }
-

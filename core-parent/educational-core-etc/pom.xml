@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.kalix.common.core</groupId>
         <artifactId>core-parent</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <groupId>com.kalix.educational</groupId>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.kalix.common.core</groupId>
-    <artifactId>common-core-etc</artifactId>
-    <name>Kalix Common Core ETC</name>
+    <artifactId>educational-core-etc</artifactId>
+    <name>Kalix Educational Core ETC</name>
     <description>ETC</description>
     <packaging>bundle</packaging>
 
     <properties>
-        <bundle.symbolicName>com.kalix.common.core.etc</bundle.symbolicName>
+        <bundle.symbolicName>com.kalix.educational.core.etc</bundle.symbolicName>
     </properties>
+
 
     <build>
         <plugins>
@@ -45,24 +47,9 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>target/classes/config.common.app.cfg</file>
+                                    <file>target/classes/config.educational.app.cfg</file>
                                     <type>cfg</type>
-                                    <classifier>config.common.app</classifier>
-                                </artifact>
-                                <artifact>
-                                    <file>target/classes/config.common.dict.cfg</file>
-                                    <type>cfg</type>
-                                    <classifier>config.common.dict</classifier>
-                                </artifact>
-                                <artifact>
-                                    <file>target/classes/ConfigMessagePool.cfg</file>
-                                    <type>cfg</type>
-                                    <classifier>ConfigMessagePool</classifier>
-                                </artifact>
-                                <artifact>
-                                    <file>target/classes/ConfigNewMessageCountPool.cfg</file>
-                                    <type>cfg</type>
-                                    <classifier>ConfigNewMessageCountPool</classifier>
+                                    <classifier>config.educational.app.cfg</classifier>
                                 </artifact>
                             </artifacts>
                         </configuration>
