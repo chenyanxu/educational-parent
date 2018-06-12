@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dict-parent</artifactId>
+        <groupId>com.kalix.educational.system.dict</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>educational-system-dict-biz</artifactId>
+    <name>Kalix Educational System Dict Biz</name>
+    <packaging>bundle</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>com.kalix.educational.system.dict</groupId>
+            <artifactId>educational-system-dict-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.kalix.educational.system.dict</groupId>
+            <artifactId>educational-system-dict-entities</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.kalix.educational.system.dict</groupId>
+            <artifactId>educational-system-dict-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <bundle.symbolicName>com.kalix.educational.system.dict.biz</bundle.symbolicName>
+    </properties>
+
+</project>

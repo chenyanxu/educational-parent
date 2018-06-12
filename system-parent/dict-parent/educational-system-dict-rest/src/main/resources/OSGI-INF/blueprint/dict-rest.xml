@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+    <reference id="educationalDictBeanService"
+               interface="com.kalix.educational.system.dict.api.biz.IEducationalDictBeanService"/>
+    <camelContext id="educationalDictCamel" xmlns="http://camel.apache.org/schema/blueprint">
+
+        <restConfiguration component="servlet" bindingMode="json">
+            <dataFormatProperty key="prettyPrint" value="${rest.pretty}"/>
+        </restConfiguration>
+
+        <rest path="/educational/dicts" consumes="application/json;charset=utf-8" produces="application/json">
+            <description>audit rest service</description>
+
+            <get id="route-getAllEducationalDict" outType="com.kalix.framework.core.api.persistence.JsonData">
+                <description>Find all EducationalDict</description>
+                <to uri="bean:educationalDictBeanService?method=getAllEntityByQuery(${header.page},${header.limit},${header.jsonStr},${header.sort})"/>
+            </get>
+
+            <post id="route-addEducationalDict" type="com.kalix.educational.system.dict.entities.EducationalDictBean"
+                  outType="com.kalix.framework.core.api.persistence.JsonStatus">
+                <description>Create a EducationalDict</description>
+                <to uri="bean:educationalDictBeanService?method=saveEntity"/>
+            </post>
+        </rest>
+        <rest path="/educational/dicts/{id}" consumes="application/json;charset=utf-8" produces="application/json">
+
+            <get id="route-getEducationalDict" type="com.kalix.educational.system.dict.entities.EducationalDictBean">
+                <description>Find EducationalDict by id</description>
+                <to uri="bean:educationalDictBeanService?method=getEntity(${header.id})"/>
+            </get>
+
+            <put id="route-updateEducationalDict" type="com.kalix.educational.system.dict.entities.EducationalDictBean"
+                 outType="com.kalix.framework.core.api.persistence.JsonStatus">
+                <description>Updates a EducationalDict</description>
+                <to uri="bean:educationalDictBeanService?method=updateEntity"/>
+            </put>
+
+            <delete id="route-deleteEducationalDict"
+                    outType="com.kalix.framework.core.api.persistence.JsonStatus">
+                <description>Delete a EducationalDict</description>
+                <to uri="bean:educationalDictBeanService?method=deleteEntity(${header.id})"/>
+            </delete>
+        </rest>
+        <rest path="/educational/dicts/cache/list" consumes="application/json;charset=utf-8"
+              produces="application/json;charset=utf-8">
+            <get id="route-getAllEducationalDictInCache">
+                <description>Find all dicts</description>
+                <to uri="bean:educationalDictBeanService?method=getAllEntity()"/>
+            </get>
+        </rest>
+        <rest path="/educational/dicts/types/list" consumes="application/json;charset=utf-8"
+              produces="application/json;charset=utf-8">
+            <get id="route-getAllEducationalDictTypes">
+                <description>Find all dicts</description>
+                <to uri="bean:educationalDictBeanService?method=getDictTypes(${header.query})"/>
+            </get>
+        </rest>
+    </camelContext>
+</blueprint>

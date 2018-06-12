@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns:jpa="http://aries.apache.org/xmlns/jpa/v2.0.0"
+           xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.2.0"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <jpa:enable/>
+    <tx:enable-annotations/>
+
+    <reference id="educationalDictBeanDao" interface="com.kalix.educational.system.dict.api.dao.IEducationalDictBeanDao"/>
+
+    <!--字典服务注册-->
+    <bean id="educationalDictBeanServiceImpl" class="com.kalix.educational.system.dict.biz.EducationalDictBeanServiceImpl">
+        <property name="dao" ref="educationalDictBeanDao"/>
+    </bean>
+    <service id="educationalDictBeanService" ref="educationalDictBeanServiceImpl"
+             interface="com.kalix.educational.system.dict.api.biz.IEducationalDictBeanService"/>
+
+</blueprint>

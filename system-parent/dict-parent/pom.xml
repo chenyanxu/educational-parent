@@ -1,36 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>system-parent</artifactId>
-        <groupId>com.kalix.common.system</groupId>
-        <version>1.0.1-SNAPSHOT</version>
+        <groupId>com.kalix.educational.system</groupId>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.kalix.common.system.dict</groupId>
+    <groupId>com.kalix.educational.system.dict</groupId>
     <artifactId>dict-parent</artifactId>
-    <name>Kalix Common System Dict</name>
+    <name>Kalix Educational System Dict Parent</name>
     <modules>
-        <module>common-system-dict-entities</module>
-        <module>common-system-dict-api</module>
-        <module>common-system-dict-dao</module>
-        <module>common-system-dict-biz</module>
-        <module>common-system-dict-rest</module>
-        <module>common-system-dict-extjs</module>
+        <module>educational-system-dict-entities</module>
+        <module>educational-system-dict-api</module>
+        <module>educational-system-dict-dao</module>
+        <module>educational-system-dict-biz</module>
+        <module>educational-system-dict-rest</module>
     </modules>
     <packaging>pom</packaging>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.kalix.common.system.dict</groupId>
-                <artifactId>common-system-dict-entities</artifactId>
-                <version>${project.common.version}</version>
+                <groupId>com.kalix.educational.system.dict</groupId>
+                <artifactId>educational-system-dict-entities</artifactId>
+                <version>${project.educational.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.kalix.common.system.dict</groupId>
-                <artifactId>common-system-dict-api</artifactId>
-                <version>${project.common.version}</version>
+                <groupId>com.kalix.educational.system.dict</groupId>
+                <artifactId>educational-system-dict-api</artifactId>
+                <version>${project.educational.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
