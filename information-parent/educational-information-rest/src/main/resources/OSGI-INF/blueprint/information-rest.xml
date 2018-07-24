@@ -3,25 +3,53 @@
            xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
            xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
        http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
-    <reference id="schoolinfomationService" interface="com.kalix.educational.information.api.biz.ISchoolInfoBeanService"/>
-    <bean id="schoolInfomationRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
-        <property name="beanName" value="com.kalix.educational.information.entities.SchoolInfoBean"/>
+    <reference id="eduschoolinfoService" interface="com.kalix.educational.information.api.biz.IEduSchoolInfoBeanService"/>
+    <reference id="eduschoolzoneService" interface="com.kalix.educational.information.api.biz.IEduSchoolZoneBeanService"/>
+    <reference id="eduschoolbuildService" interface="com.kalix.educational.information.api.biz.IEduSchoolBuildBeanService"/>
+    <reference id="eduteachspaceService" interface="com.kalix.educational.information.api.biz.IEduTeachSpaceBeanService"/>
+    <bean id="eduSchoolInfoRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
+        <property name="beanName" value="com.kalix.educational.information.entities.EduSchoolInfoBean"/>
         <property name="rests">
             <list>
-                <!--<bean class="com.kalix.framework.core.api.camel.CustomRest">-->
-                   <!--<property name="path" value="/monitor/loginname/{loginname}"/>-->
-                   <!--<property name="getDescription" value="查询登录名是否存在"/>-->
-                   <!--<property name="getParams" value="loginname:path:string::登录名"/>-->
-                   <!--<property name="getOutType" value="java.lang.Boolean"/>-->
-                   <!--<property name="getToUri" value="bean:teacherService?method=existTeacherBeanByLoginName(${header.loginname})"/>-->
-               <!--</bean>-->
             </list>
         </property>
     </bean>
 
-    <camelContext id="schoolInfomationCamel" xmlns="http://camel.apache.org/schema/blueprint">
-        <routeBuilder ref="schoolInfomationRoute"/>
-    </camelContext>
+    <bean id="eduSchoolZoneRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
+        <property name="beanName" value="com.kalix.educational.information.entities.EduSchoolZoneBean"/>
+        <property name="rests">
+            <list>
+            </list>
+        </property>
+    </bean>
+    <bean id="eduSchoolBuildRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
+        <property name="beanName" value="com.kalix.educational.information.entities.EduSchoolBuildBean"/>
+        <property name="rests">
+            <list>
+            </list>
+        </property>
+    </bean>
 
+    <bean id="eduTeachSpaceRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
+        <property name="beanName" value="com.kalix.educational.information.entities.EduTeachSpaceBean"/>
+        <property name="rests">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+
+    <camelContext id="eduSchoolInfoCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="eduSchoolInfoRoute"/>
+    </camelContext>
+    <camelContext id="eduSchoolZoneCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="eduSchoolZoneRoute"/>
+    </camelContext>
+    <camelContext id="eduSchoolBuildCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="eduSchoolBuildRoute"/>
+    </camelContext>
+    <camelContext id="eduTeachSpaceCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="eduTeachSpaceRoute"/>
+    </camelContext>
 
 </blueprint>

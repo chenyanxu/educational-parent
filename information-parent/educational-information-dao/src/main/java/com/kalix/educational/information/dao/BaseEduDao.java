@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * Created by sunlf on 2015/10/26.
  */
-public abstract class BaseAdminDao<T extends PersistentEntity, PK extends Serializable> extends GenericDao<T, PK> {
+public abstract class BaseEduDao<T extends PersistentEntity, PK extends Serializable> extends GenericDao<T, PK> {
     @Override
     @PersistenceContext(unitName = "educational-information-unit")
     public void setEntityManager(EntityManager em) {

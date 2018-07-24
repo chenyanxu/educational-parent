@@ -4,12 +4,40 @@
            xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
     <jpa:enable/>
     <tx:enable-annotations/>
-    <reference id="schoolInfoBeanDao" interface="com.kalix.educational.information.api.dao.ISchoolInfoBeanDao"/>
+    <reference id="eduSchoolInfoBeanDao" interface="com.kalix.educational.information.api.dao.IEduSchoolInfoBeanDao"/>
+    <reference id="eduSchoolZoneBeanDao" interface="com.kalix.educational.information.api.dao.IEduSchoolZoneBeanDao"/>
+    <reference id="eduSchoolBuildBeanDao" interface="com.kalix.educational.information.api.dao.IEduSchoolBuildBeanDao"/>
+    <reference id="eduTeachSpaceBeanDao" interface="com.kalix.educational.information.api.dao.IEduTeachSpaceBeanDao"/>
 
-    <bean id="schoolInfoBeanServiceImpl" class="com.kalix.educational.information.biz.SchoolInfoBeanServiceImpl">
-        <property name="dao" ref="schoolInfoBeanDao"/>
+
+    <bean id="eduSchoolInfoBeanServiceImpl" class="com.kalix.educational.information.biz.EduSchoolInfoBeanServiceImpl">
+        <property name="dao" ref="eduSchoolInfoBeanDao"/>
     </bean>
-    <service id="schoolInfoBeanService" ref="schoolInfoBeanServiceImpl"
-             interface="com.kalix.educational.information.api.biz.ISchoolInfoBeanService"/>
+    <service id="eduSchoolInfoBeanService" ref="eduSchoolInfoBeanServiceImpl"
+             interface="com.kalix.educational.information.api.biz.IEduSchoolInfoBeanService"/>
+
+
+    <bean id="eduSchoolZoneBeanServiceImpl" class="com.kalix.educational.information.biz.EduSchoolZoneBeanServiceImpl">
+        <property name="dao" ref="eduSchoolZoneBeanDao"/>
+    </bean>
+    <service id="eduSchoolZoneBeanService" ref="eduSchoolZoneBeanServiceImpl"
+             interface="com.kalix.educational.information.api.biz.IEduSchoolZoneBeanService"/>
+
+
+    <bean id="eduSchoolBuildBeanServiceImpl" class="com.kalix.educational.information.biz.EduSchoolBuildBeanServiceImpl">
+        <property name="eduSchoolZoneBeanServiceImpl" ref="eduSchoolZoneBeanServiceImpl"/>
+        <property name="dao" ref="eduSchoolBuildBeanDao"/>
+    </bean>
+    <service id="eduSchoolBuildBeanService" ref="eduSchoolBuildBeanServiceImpl"
+             interface="com.kalix.educational.information.api.biz.IEduSchoolBuildBeanService"/>
+
+
+    <bean id="eduTeachSpaceBeanServiceImpl" class="com.kalix.educational.information.biz.EduTeachSpaceBeanServiceImpl">
+        <property name="eduSchoolZoneBeanServiceImpl" ref="eduSchoolZoneBeanServiceImpl"/>
+        <property name="eduSchoolBuildBeanServiceImpl" ref="eduSchoolBuildBeanServiceImpl"/>
+        <property name="dao" ref="eduTeachSpaceBeanDao"/>
+    </bean>
+    <service id="eduTeachSpaceBeanService" ref="eduTeachSpaceBeanServiceImpl"
+             interface="com.kalix.educational.information.api.biz.IEduTeachSpaceBeanService"/>
 
 </blueprint>

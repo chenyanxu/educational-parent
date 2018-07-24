@@ -8,10 +8,35 @@
     <tx:enable-annotations/>
 
     <!--教务校园信息dao-->
-    <service id="schoolInfoBeanDao" ref="schoolInfoBeanDaoImpl" interface="com.kalix.educational.information.api.dao.ISchoolInfoBeanDao"/>
+    <service id="schoolInfoBeanDao" ref="schoolInfoBeanDaoImpl" interface="com.kalix.educational.information.api.dao.IEduSchoolInfoBeanDao"/>
 
     <bean id="schoolInfoBeanDaoImpl"
-          class="com.kalix.educational.information.dao.SchoolInfoBeanDaoImpl"> <!--init-method="init">-->
+          class="com.kalix.educational.information.dao.EduSchoolInfoBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+
+
+    <!--教务校园信息dao-->
+    <service id="schoolZoneBeanDao" ref="schoolZoneBeanDaoImpl" interface="com.kalix.educational.information.api.dao.IEduSchoolZoneBeanDao"/>
+
+    <bean id="schoolZoneBeanDaoImpl"
+          class="com.kalix.educational.information.dao.EduSchoolZoneBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+
+    <!--教务校园信息dao-->
+    <service id="schoolBuildBeanDao" ref="schoolBuildBeanDaoImpl" interface="com.kalix.educational.information.api.dao.IEduSchoolBuildBeanDao"/>
+
+    <bean id="schoolBuildBeanDaoImpl"
+          class="com.kalix.educational.information.dao.EduSchoolBuildBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+
+    <!--教务校园信息dao-->
+    <service id="teachSpaceBeanDao" ref="teachSpaceBeanDaoImpl" interface="com.kalix.educational.information.api.dao.IEduTeachSpaceBeanDao"/>
+
+    <bean id="teachSpaceBeanDaoImpl"
+          class="com.kalix.educational.information.dao.EduTeachSpaceBeanDaoImpl"> <!--init-method="init">-->
         <tx:transaction method="*" value="Required"/>
     </bean>
 
