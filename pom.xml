@@ -86,6 +86,7 @@
         <module>information-parent</module>
         <module>core-parent</module>
         <module>system-parent</module>
+        <module>teachingplan-parent</module>
     </modules>
 
     <!--<reporting>-->

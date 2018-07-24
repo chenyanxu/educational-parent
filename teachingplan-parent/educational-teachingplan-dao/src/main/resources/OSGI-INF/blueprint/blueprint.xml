@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- default-activation="lazy" -->
+<blueprint xmlns:jpa="http://aries.apache.org/xmlns/jpa/v2.0.0"
+           xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.2.0"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <jpa:enable/>
+    <tx:enable-annotations/>
+
+    <!--教务校园信息dao-->
+    <service id="lessonInfoBeanDao" ref="lessonInfoBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.ILessonInfoBeanDao"/>
+    <service id="practiceInfoBeanDao" ref="practiceInfoBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.IPracticeInfoBeanDao"/>
+
+    <bean id="lessonInfoBeanDaoImpl"
+          class="com.kalix.educational.teachingplan.dao.LessonInfoBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+
+    <bean id="practiceInfoBeanDaoImpl"
+          class="com.kalix.educational.teachingplan.dao.PracticeInfoBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+
+</blueprint>
