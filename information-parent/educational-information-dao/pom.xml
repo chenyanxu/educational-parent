@@ -16,6 +16,7 @@
     <properties>
         <bundle.symbolicName>com.kalix.educational.information.dao</bundle.symbolicName>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.kalix.educational.information</groupId>
@@ -26,6 +27,4 @@
             <artifactId>educational-information-api</artifactId>
         </dependency>
     </dependencies>
-
-
 </project>

@@ -3,25 +3,9 @@
            xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
            xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
        http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
-    <reference id="eduschoolinfoService" interface="com.kalix.educational.information.api.biz.IEduSchoolInfoBeanService"/>
-    <reference id="eduschoolzoneService" interface="com.kalix.educational.information.api.biz.IEduSchoolZoneBeanService"/>
     <reference id="eduschoolbuildService" interface="com.kalix.educational.information.api.biz.IEduSchoolBuildBeanService"/>
     <reference id="eduteachspaceService" interface="com.kalix.educational.information.api.biz.IEduTeachSpaceBeanService"/>
-    <bean id="eduSchoolInfoRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
-        <property name="beanName" value="com.kalix.educational.information.entities.EduSchoolInfoBean"/>
-        <property name="rests">
-            <list>
-            </list>
-        </property>
-    </bean>
 
-    <bean id="eduSchoolZoneRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
-        <property name="beanName" value="com.kalix.educational.information.entities.EduSchoolZoneBean"/>
-        <property name="rests">
-            <list>
-            </list>
-        </property>
-    </bean>
     <bean id="eduSchoolBuildRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
         <property name="beanName" value="com.kalix.educational.information.entities.EduSchoolBuildBean"/>
         <property name="rests">
@@ -38,18 +22,10 @@
         </property>
     </bean>
 
-
-    <camelContext id="eduSchoolInfoCamel" xmlns="http://camel.apache.org/schema/blueprint">
-        <routeBuilder ref="eduSchoolInfoRoute"/>
-    </camelContext>
-    <camelContext id="eduSchoolZoneCamel" xmlns="http://camel.apache.org/schema/blueprint">
-        <routeBuilder ref="eduSchoolZoneRoute"/>
-    </camelContext>
     <camelContext id="eduSchoolBuildCamel" xmlns="http://camel.apache.org/schema/blueprint">
         <routeBuilder ref="eduSchoolBuildRoute"/>
     </camelContext>
     <camelContext id="eduTeachSpaceCamel" xmlns="http://camel.apache.org/schema/blueprint">
         <routeBuilder ref="eduTeachSpaceRoute"/>
     </camelContext>
-
 </blueprint>

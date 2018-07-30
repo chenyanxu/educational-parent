@@ -12,8 +12,8 @@
     <artifactId>educational-information-rest</artifactId>
     <name>Kalix Educational Information Rest</name>
     <packaging>bundle</packaging>
+
     <properties>
         <bundle.symbolicName>com.kalix.educational.information.rest</bundle.symbolicName>
     </properties>
-
 </project>

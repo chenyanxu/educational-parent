@@ -8,23 +8,6 @@
     <tx:enable-annotations/>
 
     <!--教务校园信息dao-->
-    <service id="schoolInfoBeanDao" ref="schoolInfoBeanDaoImpl" interface="com.kalix.educational.information.api.dao.IEduSchoolInfoBeanDao"/>
-
-    <bean id="schoolInfoBeanDaoImpl"
-          class="com.kalix.educational.information.dao.EduSchoolInfoBeanDaoImpl"> <!--init-method="init">-->
-        <tx:transaction method="*" value="Required"/>
-    </bean>
-
-
-    <!--教务校园信息dao-->
-    <service id="schoolZoneBeanDao" ref="schoolZoneBeanDaoImpl" interface="com.kalix.educational.information.api.dao.IEduSchoolZoneBeanDao"/>
-
-    <bean id="schoolZoneBeanDaoImpl"
-          class="com.kalix.educational.information.dao.EduSchoolZoneBeanDaoImpl"> <!--init-method="init">-->
-        <tx:transaction method="*" value="Required"/>
-    </bean>
-
-    <!--教务校园信息dao-->
     <service id="schoolBuildBeanDao" ref="schoolBuildBeanDaoImpl" interface="com.kalix.educational.information.api.dao.IEduSchoolBuildBeanDao"/>
 
     <bean id="schoolBuildBeanDaoImpl"
@@ -39,5 +22,4 @@
           class="com.kalix.educational.information.dao.EduTeachSpaceBeanDaoImpl"> <!--init-method="init">-->
         <tx:transaction method="*" value="Required"/>
     </bean>
-
 </blueprint>
