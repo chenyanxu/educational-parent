@@ -1,6 +1,5 @@
 package com.kalix.educational.information.api.biz;
 
-import com.kalix.educational.information.entities.EduSchoolInfoBean;
 import com.kalix.educational.information.entities.EduSchoolZoneBean;
 import com.kalix.framework.core.api.biz.IBizService;
 
