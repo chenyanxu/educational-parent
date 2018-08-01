@@ -21,13 +21,13 @@ public class PracticeInfoBean extends PersistentEntity {
     private Double zxs;
     private Long kclb;
     private String jxdg;
-    private String cddw;
+    private Integer cddw;
 
-    public String getCddw() {
+    public Integer getCddw() {
         return cddw;
     }
 
-    public void setCddw(String cddw) {
+    public void setCddw(Integer cddw) {
         this.cddw = cddw;
     }
 
