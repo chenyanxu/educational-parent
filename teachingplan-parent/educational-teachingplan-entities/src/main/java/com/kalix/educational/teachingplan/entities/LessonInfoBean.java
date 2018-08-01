@@ -25,13 +25,13 @@ public class LessonInfoBean extends PersistentEntity {
     private Integer sjxs;
     private Integer qtxs;
     private String jxdg;
-    private String cddw;
+    private Integer cddw;
 
-    public String getCddw() {
+    public Integer getCddw() {
         return cddw;
     }
 
-    public void setCddw(String cddw) {
+    public void setCddw(Integer cddw) {
         this.cddw = cddw;
     }
 
