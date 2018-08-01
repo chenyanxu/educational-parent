@@ -14,18 +14,18 @@ import javax.persistence.Table;
 public class LessonInfoBean extends PersistentEntity {
 
 
-    private String kcdm;
-    private String zwmc;
-    private String ywmc;
-    private Double zxf;
-    private Double zxs;
-    private Integer syxs;
-    private Integer jsxs;
-    private Integer kclb;
-    private Integer sjxs;
-    private Integer qtxs;
-    private String jxdg;
-    private Integer cddw;
+    private String kcdm; // 课程代码
+    private String zwmc; // 中文名称
+    private String ywmc; // 英文名称
+    private Double zxf; // 总学分
+    private Double zxs; // 总学时
+    private Integer syxs; // 课内实践
+    private Integer jsxs; // 理论学时
+    private Integer kclb; //课程类别
+    private Integer sjxs; // 课外学时
+    private Integer qtxs; // 其他学时
+    private String jxdg; // 教学大纲
+    private Integer cddw; // 承担单位
 
     public Integer getCddw() {
         return cddw;

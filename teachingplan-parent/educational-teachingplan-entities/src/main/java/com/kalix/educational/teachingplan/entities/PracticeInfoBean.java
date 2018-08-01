@@ -14,14 +14,14 @@ import javax.persistence.Table;
 public class PracticeInfoBean extends PersistentEntity {
 
 
-    private String kcdm;
-    private String zwmc;
-    private String ywmc;
-    private Double zxf;
-    private Double zxs;
-    private Long kclb;
-    private String jxdg;
-    private Integer cddw;
+    private String kcdm; //课程代码
+    private String zwmc; //中文名称
+    private String ywmc; //英文名称
+    private Double zxf; //总学分
+    private Double zxs; //总学时
+    private Long kclb; //环节类别
+    private String jxdg; //教学大纲
+    private Integer cddw; // 承担单位
 
     public Integer getCddw() {
         return cddw;
