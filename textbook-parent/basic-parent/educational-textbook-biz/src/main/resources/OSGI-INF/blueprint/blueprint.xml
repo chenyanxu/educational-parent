@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns:jpa="http://aries.apache.org/xmlns/jpa/v2.0.0"
+           xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.2.0"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <jpa:enable/>
+    <tx:enable-annotations/>
+    <reference id="lessonInfoBeanDao" interface="com.kalix.educational.teachingplan.api.dao.ILessonInfoBeanDao"/>
+    <reference id="practiceInfoBeanDao" interface="com.kalix.educational.teachingplan.api.dao.IPracticeInfoBeanDao"/>
+
+    <bean id="lessonInfoBeanServiceImpl" class="com.kalix.educational.teachingplan.biz.LessonInfoBeanServiceImpl">
+        <property name="dao" ref="lessonInfoBeanDao"/>
+    </bean>
+    <service id="lessonInfoBeanService" ref="lessonInfoBeanServiceImpl"
+             interface="com.kalix.educational.teachingplan.api.biz.ILessonInfoBeanService"/>
+
+
+    <bean id="practiceInfoBeanServiceImpl" class="com.kalix.educational.teachingplan.biz.PracticeInfoBeanServiceImpl">
+        <property name="dao" ref="practiceInfoBeanDao"/>
+    </bean>
+    <service id="practiceInfoBeanService" ref="practiceInfoBeanServiceImpl"
+             interface="com.kalix.educational.teachingplan.api.biz.IPracticeInfoBeanService"/>
+
+</blueprint>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns:jpa="http://aries.apache.org/xmlns/jpa/v2.0.0"
+           xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.2.0"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <jpa:enable/>
+    <tx:enable-annotations/>
+    <reference id="publisherBeanDao" interface="com.kalix.educational.textbook.basic.api.dao.IPublisherBeanDao"/>
+
+    <bean id="publisherBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.PublisherBeanServiceImpl">
+        <property name="dao" ref="publisherBeanDao"/>
+    </bean>
+    <service id="publisherBeanService" ref="publisherBeanServiceImpl"
+             interface="com.kalix.educational.textbook.basic.api.biz.IPublisherBeanService"/>
+
+
+</blueprint>
