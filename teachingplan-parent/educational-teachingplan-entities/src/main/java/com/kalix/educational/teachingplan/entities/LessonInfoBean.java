@@ -4,6 +4,7 @@ import com.kalix.framework.core.api.persistence.PersistentEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * Created by Administrator_ on 2018/6/13.
@@ -26,6 +27,8 @@ public class LessonInfoBean extends PersistentEntity {
     private Integer qtxs;  // 其他学时
     private String jxdg;   // 教学大纲
     private Long cddw;     // 承担单位
+    @Transient
+    private String cddwmc; // 承担单位名称
 
     public String getKcdm() {
         return kcdm;
@@ -129,5 +132,13 @@ public class LessonInfoBean extends PersistentEntity {
 
     public void setCddw(Long cddw) {
         this.cddw = cddw;
+    }
+
+    public String getCddwmc() {
+        return cddwmc;
+    }
+
+    public void setCddwmc(String cddwmc) {
+        this.cddwmc = cddwmc;
     }
 }
