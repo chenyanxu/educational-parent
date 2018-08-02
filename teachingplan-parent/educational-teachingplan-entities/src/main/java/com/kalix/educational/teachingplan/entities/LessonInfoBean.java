@@ -7,41 +7,25 @@ import javax.persistence.Table;
 
 /**
  * Created by Administrator_ on 2018/6/13.
+ * 理论课程实体类
  */
 
 @Entity
 @Table(name = "educational_lesson_info")
 public class LessonInfoBean extends PersistentEntity {
-
-
-    private String kcdm; // 课程代码
-    private String zwmc; // 中文名称
-    private String ywmc; // 英文名称
-    private Double zxf; // 总学分
-    private Double zxs; // 总学时
-    private Integer syxs; // 课内实践
-    private Integer jsxs; // 理论学时
-    private Integer kclb; //课程类别
-    private Integer sjxs; // 课外学时
-    private Integer qtxs; // 其他学时
-    private String jxdg; // 教学大纲
-    private Integer cddw; // 承担单位
-
-    public Integer getCddw() {
-        return cddw;
-    }
-
-    public void setCddw(Integer cddw) {
-        this.cddw = cddw;
-    }
-
-    public String getJxdg() {
-        return jxdg;
-    }
-
-    public void setJxdg(String jxdg) {
-        this.jxdg = jxdg;
-    }
+    private String kcdm;   // 课程代码
+    private String zwmc;   // 中文名称
+    private String ywmc;   // 英文名称
+    private Double zxf;    // 总学分
+    private Double zxs;    // 总学时
+    private Integer syxs;  // 课内实践(实验学时)
+    private Integer jsxs;  // 理论学时(讲授学时)
+    private Integer kclb1; // 课程类别1，字典[课程类别1]
+    private Integer kclb2; // 课程类别2，字典[课程类别2]
+    private Integer sjxs;  // 课外学时(上机学时)
+    private Integer qtxs;  // 其他学时
+    private String jxdg;   // 教学大纲
+    private Long cddw;     // 承担单位
 
     public String getKcdm() {
         return kcdm;
@@ -99,12 +83,20 @@ public class LessonInfoBean extends PersistentEntity {
         this.jsxs = jsxs;
     }
 
-    public Integer getKclb() {
-        return kclb;
+    public Integer getKclb1() {
+        return kclb1;
     }
 
-    public void setKclb(Integer kclb) {
-        this.kclb = kclb;
+    public void setKclb1(Integer kclb1) {
+        this.kclb1 = kclb1;
+    }
+
+    public Integer getKclb2() {
+        return kclb2;
+    }
+
+    public void setKclb2(Integer kclb2) {
+        this.kclb2 = kclb2;
     }
 
     public Integer getSjxs() {
@@ -123,5 +115,19 @@ public class LessonInfoBean extends PersistentEntity {
         this.qtxs = qtxs;
     }
 
+    public String getJxdg() {
+        return jxdg;
+    }
 
+    public void setJxdg(String jxdg) {
+        this.jxdg = jxdg;
+    }
+
+    public Long getCddw() {
+        return cddw;
+    }
+
+    public void setCddw(Long cddw) {
+        this.cddw = cddw;
+    }
 }

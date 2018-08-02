@@ -7,37 +7,20 @@ import javax.persistence.Table;
 
 /**
  * Created by Administrator_ on 2018/6/13.
+ * 实践环节实体类
  */
 
 @Entity
 @Table(name = "educational_practice_info")
 public class PracticeInfoBean extends PersistentEntity {
-
-
-    private String kcdm; //课程代码
-    private String zwmc; //中文名称
-    private String ywmc; //英文名称
-    private Double zxf; //总学分
-    private Double zxs; //总学时
-    private Long kclb; //环节类别
-    private String jxdg; //教学大纲
-    private Integer cddw; // 承担单位
-
-    public Integer getCddw() {
-        return cddw;
-    }
-
-    public void setCddw(Integer cddw) {
-        this.cddw = cddw;
-    }
-
-    public String getJxdg() {
-        return jxdg;
-    }
-
-    public void setJxdg(String jxdg) {
-        this.jxdg = jxdg;
-    }
+    private String kcdm;   // 课程代码
+    private String zwmc;   // 中文名称
+    private String ywmc;   // 英文名称
+    private Double zxf;    // 总学分
+    private Double zxs;    // 总学时
+    private Integer hjlb;  // 环节类别，字典[环节类别]
+    private String jxdg;   // 教学大纲
+    private Long cddw;     // 承担单位
 
     public String getKcdm() {
         return kcdm;
@@ -79,11 +62,27 @@ public class PracticeInfoBean extends PersistentEntity {
         this.zxs = zxs;
     }
 
-    public Long getKclb() {
-        return kclb;
+    public Integer getHjlb() {
+        return hjlb;
     }
 
-    public void setKclb(Long kclb) {
-        this.kclb = kclb;
+    public void setHjlb(Integer hjlb) {
+        this.hjlb = hjlb;
+    }
+
+    public String getJxdg() {
+        return jxdg;
+    }
+
+    public void setJxdg(String jxdg) {
+        this.jxdg = jxdg;
+    }
+
+    public Long getCddw() {
+        return cddw;
+    }
+
+    public void setCddw(Long cddw) {
+        this.cddw = cddw;
     }
 }
