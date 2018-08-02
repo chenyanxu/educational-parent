@@ -19,6 +19,7 @@
 
     <bean id="practiceInfoBeanServiceImpl" class="com.kalix.educational.teachingplan.biz.PracticeInfoBeanServiceImpl">
         <property name="dao" ref="practiceInfoBeanDao"/>
+        <property name="organizationBeanServiceImpl" ref="iOrganizationBeanService"/>
     </bean>
     <service id="practiceInfoBeanService" ref="practiceInfoBeanServiceImpl"
              interface="com.kalix.educational.teachingplan.api.biz.IPracticeInfoBeanService"/>
