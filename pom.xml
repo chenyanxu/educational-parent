@@ -87,6 +87,13 @@
         <module>core-parent</module>
         <module>system-parent</module>
         <module>teachingplan-parent</module>
+        <module>arrangement-parent</module>
+        <module>evaluation-parent</module>
+        <module>examination-parent</module>
+        <module>study-parent</module>
+        <module>score-parent</module>
+        <module>graduation-parent</module>
+        <module>gradeexamination-parent</module>
     </modules>
 
     <!--<reporting>-->
