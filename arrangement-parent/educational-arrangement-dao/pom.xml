@@ -3,28 +3,28 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>information-parent</artifactId>
-        <groupId>com.kalix.educational.information</groupId>
+        <artifactId>arrangement-parent</artifactId>
+        <groupId>com.kalix.educational.arrangement</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>educational-information-api</artifactId>
-    <name>Kalix Educational Information API</name>
+    <artifactId>educational-arrangement-dao</artifactId>
+    <name>Kalix Educational Arrangement DAO</name>
     <packaging>bundle</packaging>
 
     <properties>
-        <bundle.symbolicName>com.kalix.educational.information.api</bundle.symbolicName>
+        <bundle.symbolicName>com.kalix.educational.arrangement.dao</bundle.symbolicName>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.kalix.framework.core</groupId>
-            <artifactId>framework-core-impl</artifactId>
+            <groupId>com.kalix.educational.arrangement</groupId>
+            <artifactId>educational-arrangement-entities</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.kalix.educational.information</groupId>
-            <artifactId>educational-information-entities</artifactId>
+            <groupId>com.kalix.educational.arrangement</groupId>
+            <artifactId>educational-arrangement-api</artifactId>
         </dependency>
     </dependencies>
 </project>

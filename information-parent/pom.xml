@@ -14,7 +14,6 @@
     <name>Kalix Educational Information Parent</name>
     <packaging>pom</packaging>
 
-
     <modules>
         <module>educational-information-entities</module>
         <module>educational-information-api</module>
@@ -42,5 +41,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 </project>

@@ -14,7 +14,25 @@
     <name>Kalix Educational Arrangement Parent</name>
     <modules>
         <module>educational-arrangement-entities</module>
+        <module>educational-arrangement-api</module>
+        <module>educational-arrangement-dao</module>
+        <module>educational-arrangement-biz</module>
+        <module>educational-arrangement-rest</module>
     </modules>
     <packaging>pom</packaging>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.kalix.educational.arrangement</groupId>
+                <artifactId>educational-arrangement-entities</artifactId>
+                <version>${project.educational.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kalix.educational.arrangement</groupId>
+                <artifactId>educational-arrangement-api</artifactId>
+                <version>${project.educational.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

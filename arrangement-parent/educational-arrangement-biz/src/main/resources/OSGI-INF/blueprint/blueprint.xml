@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns:jpa="http://aries.apache.org/xmlns/jpa/v2.0.0"
+           xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.2.0"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <jpa:enable/>
+    <tx:enable-annotations/>
+
+    <reference id="schoolCalendarBeanDao" interface="com.kalix.educational.arrangement.api.dao.ISchoolCalendarBeanDao"/>
+    <reference id="courseArrangementBeanDao" interface="com.kalix.educational.arrangement.api.dao.ICourseArrangementBeanDao"/>
+
+    <!--校历信息service-->
+    <bean id="schoolCalendarBeanServiceImpl" class="com.kalix.educational.arrangement.biz.SchoolCalendarBeanServiceImpl">
+        <property name="dao" ref="schoolCalendarBeanDao"/>
+    </bean>
+    <service id="schoolCalendarBeanService" ref="schoolCalendarBeanServiceImpl"
+             interface="com.kalix.educational.arrangement.api.biz.ISchoolCalendarBeanService"/>
+
+    <!--排课（课程安排）service-->
+    <bean id="courseArrangementBeanServiceImpl" class="com.kalix.educational.arrangement.biz.CourseArrangementBeanServiceImpl">
+        <property name="dao" ref="courseArrangementBeanDao"/>
+    </bean>
+    <service id="courseArrangementBeanService" ref="courseArrangementBeanServiceImpl"
+             interface="com.kalix.educational.arrangement.api.biz.ICourseArrangementBeanService"/>
+</blueprint>
