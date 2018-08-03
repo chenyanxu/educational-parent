@@ -32,9 +32,9 @@ public class SchoolCalendarBean extends PersistentEntity {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date secondClassEndDate;     // 第二学期上课结束日期
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private Date secondHolidayStartDate; // 第一学期假期开始日期
+    private Date secondHolidayStartDate; // 第二学期假期开始日期
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private Date secondHolidayEndDate;   // 第一学期假期结束日期
+    private Date secondHolidayEndDate;   // 第二学期假期结束日期
 
     public Date getSchoolYear() {
         return schoolYear;
