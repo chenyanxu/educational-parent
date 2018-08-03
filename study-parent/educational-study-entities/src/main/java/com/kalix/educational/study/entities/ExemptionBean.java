@@ -12,7 +12,7 @@ import javax.persistence.Transient;
  */
 
 @Entity
-@Table(name = "educational_exemption")
+@Table(name = "edu_study_exemption")
 public class ExemptionBean extends PersistentEntity {
 
 }

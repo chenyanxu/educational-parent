@@ -12,6 +12,9 @@
     <groupId>com.kalix.educational.arrangement</groupId>
     <artifactId>arrangement-parent</artifactId>
     <name>Kalix Educational Arrangement Parent</name>
+    <modules>
+        <module>educational-arrangement-entities</module>
+    </modules>
     <packaging>pom</packaging>
 
 </project>

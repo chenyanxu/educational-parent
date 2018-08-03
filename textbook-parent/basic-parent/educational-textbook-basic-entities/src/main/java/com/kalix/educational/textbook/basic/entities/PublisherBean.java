@@ -8,7 +8,7 @@ import javax.persistence.Table;
  * Created by zangyanming on 2018/8/2.
  */
 @Entity
-@Table(name = "educational_textbook_basic_publisher")
+@Table(name = "edu_textbook_basic_publisher")
 public class PublisherBean extends PersistentEntity {
     private String pressCode;//代码
     private String fullName;//名称
