@@ -13,7 +13,7 @@ import javax.persistence.Transient;
  * @version 1.0.0
  */
 @Entity
-@Table(name = "educational_teach_space")
+@Table(name = "edu_teach_space")
 public class EduTeachSpaceBean extends PersistentEntity {
 
     private Long szxqid;  // 所在校区

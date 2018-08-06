@@ -94,6 +94,7 @@
         <module>score-parent</module>
         <module>graduation-parent</module>
         <module>gradeexamination-parent</module>
+        <module>textbook-parent</module>
     </modules>
 
     <!--<reporting>-->

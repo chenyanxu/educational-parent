@@ -12,7 +12,7 @@ import javax.persistence.Transient;
  */
 
 @Entity
-@Table(name = "educational_retake")
+@Table(name = "edu_study_retake")
 public class RetakeBean extends PersistentEntity {
 
 }

@@ -8,7 +8,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "educational_dict")
+@Table(name = "edu_dict")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class EducationalDictBean extends PersistentEntity {
     private String label;    // 标签名

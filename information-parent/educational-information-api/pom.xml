@@ -26,6 +26,5 @@
             <groupId>com.kalix.educational.information</groupId>
             <artifactId>educational-information-entities</artifactId>
         </dependency>
-
     </dependencies>
 </project>

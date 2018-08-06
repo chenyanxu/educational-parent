@@ -13,7 +13,7 @@ import javax.persistence.Transient;
  * @version 1.0.0
  */
 @Entity
-@Table(name = "educational_school_build")
+@Table(name = "edu_school_build")
 public class EduSchoolBuildBean extends PersistentEntity {
 
     private String name;
