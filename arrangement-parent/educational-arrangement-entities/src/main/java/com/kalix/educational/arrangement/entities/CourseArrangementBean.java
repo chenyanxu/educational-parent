@@ -15,11 +15,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "edu_arr_course_arrangement")
 public class CourseArrangementBean extends PersistentEntity {
-    private Integer classWeeks = 20;        // 学期上课周数
-    private Integer classPerWeekDays = 5;   // 周排课天数，5、6、7
-    private Integer classMorningSections;   // 上午日排课节数
-    private Integer classAfternoonSections; // 下午日排课节数
-    private Integer classEveningSections;   // 晚上日排课节数
+    private Integer classWeeks = 20;       // 学期上课周数
+    private String classPerWeekDays = "5"; // 周排课天数，5、6、7
+    private String classMorningSections;   // 上午日排课节数
+    private String classAfternoonSections; // 下午日排课节数
+    private String classEveningSections;   // 晚上日排课节数
 
     public Integer getClassWeeks() {
         return classWeeks;
@@ -29,35 +29,35 @@ public class CourseArrangementBean extends PersistentEntity {
         this.classWeeks = classWeeks;
     }
 
-    public Integer getClassPerWeekDays() {
+    public String getClassPerWeekDays() {
         return classPerWeekDays;
     }
 
-    public void setClassPerWeekDays(Integer classPerWeekDays) {
+    public void setClassPerWeekDays(String classPerWeekDays) {
         this.classPerWeekDays = classPerWeekDays;
     }
 
-    public Integer getClassMorningSections() {
+    public String getClassMorningSections() {
         return classMorningSections;
     }
 
-    public void setClassMorningSections(Integer classMorningSections) {
+    public void setClassMorningSections(String classMorningSections) {
         this.classMorningSections = classMorningSections;
     }
 
-    public Integer getClassAfternoonSections() {
+    public String getClassAfternoonSections() {
         return classAfternoonSections;
     }
 
-    public void setClassAfternoonSections(Integer classAfternoonSections) {
+    public void setClassAfternoonSections(String classAfternoonSections) {
         this.classAfternoonSections = classAfternoonSections;
     }
 
-    public Integer getClassEveningSections() {
+    public String getClassEveningSections() {
         return classEveningSections;
     }
 
-    public void setClassEveningSections(Integer classEveningSections) {
+    public void setClassEveningSections(String classEveningSections) {
         this.classEveningSections = classEveningSections;
     }
 }
