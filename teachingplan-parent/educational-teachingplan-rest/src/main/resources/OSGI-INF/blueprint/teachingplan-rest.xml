@@ -5,6 +5,7 @@
        http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
     <reference id="lessoninfoService" interface="com.kalix.educational.teachingplan.api.biz.ILessonInfoBeanService"/>
     <reference id="practiceinfoService" interface="com.kalix.educational.teachingplan.api.biz.IPracticeInfoBeanService"/>
+    <reference id="setprofessionalService" interface="com.kalix.educational.teachingplan.api.biz.ISetProfessionalBeanService"/>
     <bean id="lessonInfoRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
         <property name="beanName" value="com.kalix.educational.teachingplan.entities.LessonInfoBean"/>
         <property name="rests">
@@ -35,6 +36,21 @@
         </property>
     </bean>
 
+    <bean id="setProfessionalRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
+        <property name="beanName" value="com.kalix.educational.teachingplan.entities.SetProfessionalBean"/>
+        <property name="rests">
+            <list>
+                <!--<bean class="com.kalix.framework.core.api.camel.CustomRest">-->
+                <!--<property name="path" value="/monitor/loginname/{loginname}"/>-->
+                <!--<property name="getDescription" value="查询登录名是否存在"/>-->
+                <!--<property name="getParams" value="loginname:path:string::登录名"/>-->
+                <!--<property name="getOutType" value="java.lang.Boolean"/>-->
+                <!--<property name="getToUri" value="bean:teacherService?method=existTeacherBeanByLoginName(${header.loginname})"/>-->
+                <!--</bean>-->
+            </list>
+        </property>
+    </bean>
+
     <camelContext id="lessonInfoCamel" xmlns="http://camel.apache.org/schema/blueprint">
         <routeBuilder ref="lessonInfoRoute"/>
     </camelContext>
@@ -42,5 +58,7 @@
         <routeBuilder ref="practiceInfoRoute"/>
     </camelContext>
 
-
+    <camelContext id="setProfessionalCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="setProfessionalRoute"/>
+    </camelContext>
 </blueprint>

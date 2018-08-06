@@ -7,18 +7,24 @@
     <jpa:enable/>
     <tx:enable-annotations/>
 
-    <!--教务校园信息dao-->
-    <service id="lessonInfoBeanDao" ref="lessonInfoBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.ILessonInfoBeanDao"/>
-    <service id="practiceInfoBeanDao" ref="practiceInfoBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.IPracticeInfoBeanDao"/>
-
+    <!--理论课程信息dao-->
     <bean id="lessonInfoBeanDaoImpl"
           class="com.kalix.educational.teachingplan.dao.LessonInfoBeanDaoImpl"> <!--init-method="init">-->
         <tx:transaction method="*" value="Required"/>
     </bean>
+    <service id="lessonInfoBeanDao" ref="lessonInfoBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.ILessonInfoBeanDao"/>
 
+    <!--实践环节信息dao-->
     <bean id="practiceInfoBeanDaoImpl"
           class="com.kalix.educational.teachingplan.dao.PracticeInfoBeanDaoImpl"> <!--init-method="init">-->
         <tx:transaction method="*" value="Required"/>
     </bean>
+    <service id="practiceInfoBeanDao" ref="practiceInfoBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.IPracticeInfoBeanDao"/>
 
+    <!--年级专业设置dao-->
+    <bean id="setProfessionalBeanDaoImpl"
+          class="com.kalix.educational.teachingplan.dao.SetProfessionalBeanDaoImpl">
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+    <service id="setProfessionalBeanDao" ref="setProfessionalBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.ISetProfessionalBeanDao"/>
 </blueprint>
