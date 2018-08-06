@@ -13,7 +13,7 @@ import javax.persistence.Table;
  * @version 1.0.0
  */
 @Entity
-@Table(name = "edu_arr_course")
+@Table(name = "edu_arr_course_arrangement")
 public class CourseArrangementBean extends PersistentEntity {
     private Integer classWeeks = 20;        // 学期上课周数
     private Integer classPerWeekDays = 5;   // 周排课天数，5、6、7
