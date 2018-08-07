@@ -1,44 +1,38 @@
 package com.kalix.educational.teachingplan.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kalix.framework.core.api.persistence.PersistentEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.criteria.CriteriaBuilder;
+import java.util.Date;
 
 /**
  * Created by Administrator_ on 2018/7/26.
+ * 年级专业设置实体类
  */
 
 @Entity
-@Table(name = "educational_setProfessional_info")
+@Table(name = "edu_set_professional")
 public class SetProfessionalBean extends PersistentEntity {
+    private Long majorId; // 专业id
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy", timezone = "GMT+8")
+    private Date grade;   // 年级
 
-    private Integer zydm;
-    private String nj;
-    private Integer cddw;
-
-    public Integer getZydm() {
-        return zydm;
+    public Long getMajorId() {
+        return majorId;
     }
 
-    public void setZydm(Integer zydm) {
-        this.zydm = zydm;
+    public void setMajorId(Long majorId) {
+        this.majorId = majorId;
     }
 
-    public String getNj() {
-        return nj;
+    public Date getGrade() {
+        return grade;
     }
 
-    public void setNj(String nj) {
-        this.nj = nj;
-    }
-
-    public Integer getCddw() {
-        return cddw;
-    }
-
-    public void setCddw(Integer cddw) {
-        this.cddw = cddw;
+    public void setGrade(Date grade) {
+        this.grade = grade;
     }
 }
