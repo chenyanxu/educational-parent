@@ -7,11 +7,41 @@
     <jpa:enable/>
     <tx:enable-annotations/>
 
-    <!--教务校园信息dao-->
+    <!--教材信息dao-->
     <service id="publisherBeanDao" ref="publisherBeanDaoImpl" interface="com.kalix.educational.textbook.basic.api.dao.IPublisherBeanDao"/>
+    <service id="bookRoomBeanDao" ref="bookRoomBeanDaoImpl" interface="com.kalix.educational.textbook.basic.api.dao.IBookRoomBeanDao"/>
+    <service id="bookSectionBeanDao" ref="bookSectionBeanDaoImpl" interface="com.kalix.educational.textbook.basic.api.dao.IBookSectionBeanDao"/>
+    <service id="bookShelfBeanDao" ref="bookShelfBeanDaoImpl" interface="com.kalix.educational.textbook.basic.api.dao.IBookShelfBeanDao"/>
+    <service id="buyerBeanDao" ref="buyerBeanDaoImpl" interface="com.kalix.educational.textbook.basic.api.dao.IBuyerBeanDao"/>
+    <service id="handmanBeanDao" ref="handmanBeanDaoImpl" interface="com.kalix.educational.textbook.basic.api.dao.IHandmanBeanDao"/>
+    <service id="providerBeanDao" ref="providerBeanDaoImpl" interface="com.kalix.educational.textbook.basic.api.dao.IProviderBeanDao"/>
 
     <bean id="publisherBeanDaoImpl"
           class="com.kalix.educational.textbook.basic.dao.PublisherBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+    <bean id="bookRoomBeanDaoImpl"
+          class="com.kalix.educational.textbook.basic.dao.BookRoomBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+    <bean id="bookSectionBeanDaoImpl"
+          class="com.kalix.educational.textbook.basic.dao.BookSectionBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+    <bean id="bookShelfBeanDaoImpl"
+          class="com.kalix.educational.textbook.basic.dao.BookShelfBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+    <bean id="buyerBeanDaoImpl"
+          class="com.kalix.educational.textbook.basic.dao.BuyerBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+    <bean id="handmanBeanDaoImpl"
+          class="com.kalix.educational.textbook.basic.dao.HandmanBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+    <bean id="providerBeanDaoImpl"
+          class="com.kalix.educational.textbook.basic.dao.ProviderBeanDaoImpl"> <!--init-method="init">-->
         <tx:transaction method="*" value="Required"/>
     </bean>
 

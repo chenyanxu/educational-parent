@@ -5,12 +5,57 @@
     <jpa:enable/>
     <tx:enable-annotations/>
     <reference id="publisherBeanDao" interface="com.kalix.educational.textbook.basic.api.dao.IPublisherBeanDao"/>
+    <reference id="bookRoomBeanDao" interface="com.kalix.educational.textbook.basic.api.dao.IBookRoomBeanDao"/>
+    <reference id="bookSectionBeanDao" interface="com.kalix.educational.textbook.basic.api.dao.IBookSectionBeanDao"/>
+    <reference id="bookShelfBeanDao" interface="com.kalix.educational.textbook.basic.api.dao.IBookShelfBeanDao"/>
+    <reference id="buyerBeanDao" interface="com.kalix.educational.textbook.basic.api.dao.IBuyerBeanDao"/>
+    <reference id="handmanBeanDao" interface="com.kalix.educational.textbook.basic.api.dao.IHandmanBeanDao"/>
+    <reference id="providerBeanDao" interface="com.kalix.educational.textbook.basic.api.dao.IProviderBeanDao"/>
 
     <bean id="publisherBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.PublisherBeanServiceImpl">
         <property name="dao" ref="publisherBeanDao"/>
     </bean>
+    <bean id="bookRoomBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.BookRoomBeanServiceImpl">
+        <property name="dao" ref="bookRoomBeanDao"/>
+    </bean>
+    <bean id="bookSectionBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.BookSectionBeanServiceImpl">
+        <property name="dao" ref="bookSectionBeanDao"/>
+    </bean>
+    <bean id="bookShelfBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.BookShelfBeanServiceImpl">
+        <property name="dao" ref="bookShelfBeanDao"/>
+    </bean>
+    <bean id="buyerBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.BuyerBeanServiceImpl">
+        <property name="dao" ref="buyerBeanDao"/>
+    </bean>
+    <bean id="handmanBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.HandmanBeanServiceImpl">
+        <property name="dao" ref="handmanBeanDao"/>
+    </bean>
+    <bean id="providerBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.ProviderBeanServiceImpl">
+        <property name="dao" ref="providerBeanDao"/>
+    </bean>
+
+
     <service id="publisherBeanService" ref="publisherBeanServiceImpl"
              interface="com.kalix.educational.textbook.basic.api.biz.IPublisherBeanService"/>
+
+    <service id="bookRoomBeanService" ref="bookRoomBeanServiceImpl"
+             interface="com.kalix.educational.textbook.basic.api.biz.IBookRoomBeanService"/>
+
+    <service id="bookSectionBeanService" ref="bookSectionBeanServiceImpl"
+             interface="com.kalix.educational.textbook.basic.api.biz.IBookSectionBeanService"/>
+
+    <service id="bookShelfBeanService" ref="bookShelfBeanServiceImpl"
+             interface="com.kalix.educational.textbook.basic.api.biz.IBookShelfBeanService"/>
+
+    <service id="buyerBeanService" ref="buyerBeanServiceImpl"
+             interface="com.kalix.educational.textbook.basic.api.biz.IBuyerBeanService"/>
+
+    <service id="handmanBeanService" ref="handmanBeanServiceImpl"
+             interface="com.kalix.educational.textbook.basic.api.biz.IHandmanBeanService"/>
+
+    <service id="providerBeanService" ref="providerBeanServiceImpl"
+             interface="com.kalix.educational.textbook.basic.api.biz.IProviderBeanService"/>
+
 
 
 </blueprint>
