@@ -6,29 +6,29 @@
     <tx:enable-annotations/>
     <reference id="lessonInfoBeanDao" interface="com.kalix.educational.teachingplan.api.dao.ILessonInfoBeanDao"/>
     <reference id="practiceInfoBeanDao" interface="com.kalix.educational.teachingplan.api.dao.IPracticeInfoBeanDao"/>
-    <reference id="setProfessionalBeanDao" interface="com.kalix.educational.teachingplan.api.dao.ISetProfessionalBeanDao"/>
-    <reference id="iOrganizationBeanService" interface="com.kalix.admin.core.api.biz.IOrganizationBeanService"/>
+    <reference id="organizationBeanService" interface="com.kalix.admin.core.api.biz.IOrganizationBeanService"/>
+    <reference id="gradeBeanDao" interface="com.kalix.educational.teachingplan.api.dao.IGradeBeanDao"/>
 
+    <!-- 理论课程服务 -->
     <bean id="lessonInfoBeanServiceImpl" class="com.kalix.educational.teachingplan.biz.LessonInfoBeanServiceImpl">
         <property name="dao" ref="lessonInfoBeanDao"/>
-        <property name="organizationBeanServiceImpl" ref="iOrganizationBeanService"/>
+        <property name="organizationBeanServiceImpl" ref="organizationBeanService"/>
     </bean>
     <service id="lessonInfoBeanService" ref="lessonInfoBeanServiceImpl"
              interface="com.kalix.educational.teachingplan.api.biz.ILessonInfoBeanService"/>
 
-
+    <!-- 实践环节服务 -->
     <bean id="practiceInfoBeanServiceImpl" class="com.kalix.educational.teachingplan.biz.PracticeInfoBeanServiceImpl">
         <property name="dao" ref="practiceInfoBeanDao"/>
-        <property name="organizationBeanServiceImpl" ref="iOrganizationBeanService"/>
+        <property name="organizationBeanServiceImpl" ref="organizationBeanService"/>
     </bean>
     <service id="practiceInfoBeanService" ref="practiceInfoBeanServiceImpl"
              interface="com.kalix.educational.teachingplan.api.biz.IPracticeInfoBeanService"/>
 
-
-    <bean id="setProfessionalBeanServiceImpl" class="com.kalix.educational.teachingplan.biz.SetProfessionalBeanServiceImpl">
-        <property name="dao" ref="setProfessionalBeanDao"/>
+    <!-- 年级服务 -->
+    <bean id="gradeBeanServiceImpl" class="com.kalix.educational.teachingplan.biz.GradeBeanServiceImpl">
+        <property name="dao" ref="gradeBeanDao"/>
     </bean>
-    <service id="setProfessionalBeanService" ref="setProfessionalBeanServiceImpl"
-             interface="com.kalix.educational.teachingplan.api.biz.ISetProfessionalBeanService"/>
-
+    <service id="gradeBeanService" ref="gradeBeanServiceImpl"
+             interface="com.kalix.educational.teachingplan.api.biz.IGradeBeanService"/>
 </blueprint>

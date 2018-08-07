@@ -21,10 +21,9 @@
     </bean>
     <service id="practiceInfoBeanDao" ref="practiceInfoBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.IPracticeInfoBeanDao"/>
 
-    <!--年级专业设置dao-->
-    <bean id="setProfessionalBeanDaoImpl"
-          class="com.kalix.educational.teachingplan.dao.SetProfessionalBeanDaoImpl">
+    <!--年级dao-->
+    <bean id="gradeBeanDaoImpl" class="com.kalix.educational.teachingplan.dao.GradeBeanDaoImpl">
         <tx:transaction method="*" value="Required"/>
     </bean>
-    <service id="setProfessionalBeanDao" ref="setProfessionalBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.ISetProfessionalBeanDao"/>
+    <service id="gradeBeanDao" ref="gradeBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.IGradeBeanDao"/>
 </blueprint>
