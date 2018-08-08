@@ -30,13 +30,20 @@
         <property name="beanName" value="com.kalix.educational.teachingplan.entities.GradeBean"/>
         <property name="rests">
             <list>
-                <!--<bean class="com.kalix.framework.core.api.camel.CustomRest">-->
-                <!--<property name="path" value="/monitor/loginname/{loginname}"/>-->
-                <!--<property name="getDescription" value="查询登录名是否存在"/>-->
-                <!--<property name="getParams" value="loginname:path:string::登录名"/>-->
-                <!--<property name="getOutType" value="java.lang.Boolean"/>-->
-                <!--<property name="getToUri" value="bean:teacherService?method=existTeacherBeanByLoginName(${header.loginname})"/>-->
-                <!--</bean>-->
+                <bean class="com.kalix.framework.core.api.camel.CustomRest">
+                    <property name="path" value="/grades/{gradeId}/majorids"/>
+
+                    <property name="getDescription" value="查询指定年级id下的全部专业信息ids"/>
+                    <property name="getOutType" value="java.util.List"/>
+                    <property name="getToUri"
+                              value="bean:gradeService?method=getMajorIdsByGradeId(${header.gradeId})"/>
+
+                    <property name="postDescription" value="保存指定年级id的全部专业信息ids"/>
+                    <property name="inType" value="java.util.List"/>
+                    <property name="postOutType" value="com.kalix.framework.core.api.persistence.JsonStatus"/>
+                    <property name="postToUri"
+                              value="bean:gradeService?method=saveGradeMajors(${body})"/>
+                </bean>
             </list>
         </property>
     </bean>

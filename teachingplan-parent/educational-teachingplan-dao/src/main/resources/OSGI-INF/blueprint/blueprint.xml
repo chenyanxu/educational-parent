@@ -26,4 +26,10 @@
         <tx:transaction method="*" value="Required"/>
     </bean>
     <service id="gradeBeanDao" ref="gradeBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.IGradeBeanDao"/>
+
+    <!--年级与专业关联dao-->
+    <bean id="gradeMajorBeanDaoImpl" class="com.kalix.educational.teachingplan.dao.GradeMajorBeanDaoImpl">
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+    <service id="gradeMajorBeanDao" ref="gradeMajorBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.IGradeMajorBeanDao"/>
 </blueprint>
