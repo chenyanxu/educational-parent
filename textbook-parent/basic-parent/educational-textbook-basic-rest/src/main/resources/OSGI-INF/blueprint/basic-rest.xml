@@ -6,6 +6,13 @@
 
 
     <reference id="publisherService" interface="com.kalix.educational.textbook.basic.api.biz.IPublisherBeanService"/>
+    <reference id="bookroomService" interface="com.kalix.educational.textbook.basic.api.biz.IBookRoomBeanService"/>
+    <reference id="booksectionService" interface="com.kalix.educational.textbook.basic.api.biz.IBookSectionBeanService"/>
+    <reference id="bookshelfService" interface="com.kalix.educational.textbook.basic.api.biz.IBookShelfBeanService"/>
+    <reference id="buyerService" interface="com.kalix.educational.textbook.basic.api.biz.IBuyerBeanService"/>
+    <reference id="handmanService" interface="com.kalix.educational.textbook.basic.api.biz.IHandmanBeanService"/>
+    <reference id="providerService" interface="com.kalix.educational.textbook.basic.api.biz.IProviderBeanService"/>
+
     <bean id="publisherRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
         <property name="beanName" value="com.kalix.educational.textbook.basic.entities.PublisherBean"/>
         <property name="rests">
@@ -13,7 +20,69 @@
             </list>
         </property>
     </bean>
+    <bean id="bookRoomRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
+        <property name="beanName" value="com.kalix.educational.textbook.basic.entities.BookRoomBean"/>
+        <property name="rests">
+            <list>
+            </list>
+        </property>
+    </bean>
+    <bean id="bookSectionRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
+        <property name="beanName" value="com.kalix.educational.textbook.basic.entities.BookSectionBean"/>
+        <property name="rests">
+            <list>
+            </list>
+        </property>
+    </bean>
+    <bean id="bookShelfRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
+        <property name="beanName" value="com.kalix.educational.textbook.basic.entities.BookShelfBean"/>
+        <property name="rests">
+            <list>
+            </list>
+        </property>
+    </bean>
+    <bean id="buyerRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
+        <property name="beanName" value="com.kalix.educational.textbook.basic.entities.BuyerBean"/>
+        <property name="rests">
+            <list>
+            </list>
+        </property>
+    </bean>
+    <bean id="handmanRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
+        <property name="beanName" value="com.kalix.educational.textbook.basic.entities.HandmanBean"/>
+        <property name="rests">
+            <list>
+            </list>
+        </property>
+    </bean>
+    <bean id="providerRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
+        <property name="beanName" value="com.kalix.educational.textbook.basic.entities.ProviderBean"/>
+        <property name="rests">
+            <list>
+            </list>
+        </property>
+    </bean>
+
     <camelContext id="publisherCamel" xmlns="http://camel.apache.org/schema/blueprint">
         <routeBuilder ref="publisherRoute"/>
     </camelContext>
+    <camelContext id="bookRoomCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="bookRoomRoute"/>
+    </camelContext>
+    <camelContext id="bookSectionCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="bookSectionRoute"/>
+    </camelContext>
+    <camelContext id="bookShelfCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="bookShelfRoute"/>
+    </camelContext>
+    <camelContext id="buyerCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="buyerRoute"/>
+    </camelContext>
+    <camelContext id="handmanCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="handmanRoute"/>
+    </camelContext>
+    <camelContext id="providerCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="providerRoute"/>
+    </camelContext>
+
 </blueprint>
