@@ -12,9 +12,8 @@
     <artifactId>educational-teachingplan-rest</artifactId>
     <name>Kalix Educational Teachingplan Rest</name>
     <packaging>bundle</packaging>
+
     <properties>
         <bundle.symbolicName>com.kalix.educational.teachingplan.rest</bundle.symbolicName>
     </properties>
-
-
 </project>
