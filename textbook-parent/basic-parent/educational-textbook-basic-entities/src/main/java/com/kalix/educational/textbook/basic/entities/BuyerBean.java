@@ -14,6 +14,7 @@ import javax.persistence.Table;
 public class BuyerBean extends PersistentEntity {
     private String code;//单位代码
     private String name;//单位名称
+    private String contact;//联系人
     private String tel;//电话
     private String fax;//传真
     private String zipCode;//邮编
@@ -34,6 +35,14 @@ public class BuyerBean extends PersistentEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 
     public String getTel() {
