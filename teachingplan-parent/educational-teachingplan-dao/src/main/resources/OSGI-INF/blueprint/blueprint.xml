@@ -20,4 +20,11 @@
         <tx:transaction method="*" value="Required"/>
     </bean>
     <service id="practiceInfoBeanDao" ref="practiceInfoBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.IPracticeInfoBeanDao"/>
+
+    <!--模板设置dao-->
+    <bean id="setTemplateBeanDaoImpl"
+          class="com.kalix.educational.teachingplan.dao.SetTemplateBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+    <service id="setTemplateBeanDao" ref="setTemplateBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.ISetTemplateBeanDao"/>
 </blueprint>

@@ -5,7 +5,7 @@
        http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
     <reference id="lessoninfoService" interface="com.kalix.educational.teachingplan.api.biz.ILessonInfoBeanService"/>
     <reference id="practiceinfoService" interface="com.kalix.educational.teachingplan.api.biz.IPracticeInfoBeanService"/>
-
+    <reference id="settemplateService" interface="com.kalix.educational.teachingplan.api.biz.ISetTemplateBeanService"/>
     <!-- 理论课程 -->
     <bean id="lessonInfoRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
         <property name="beanName" value="com.kalix.educational.teachingplan.entities.LessonInfoBean"/>
@@ -24,10 +24,27 @@
         </property>
     </bean>
 
+    <!-- 设置专业毕业学分要求模板 -->
+    <bean id="setTemplateRoute" class="com.kalix.framework.core.impl.camel.BaseRouteBuilder">
+        <property name="beanName" value="com.kalix.educational.teachingplan.entities.SetTemplateBean"/>
+        <property name="rests">
+            <list>
+            </list>
+        </property>
+    </bean>
+
     <camelContext id="lessonInfoCamel" xmlns="http://camel.apache.org/schema/blueprint">
         <routeBuilder ref="lessonInfoRoute"/>
     </camelContext>
     <camelContext id="practiceInfoCamel" xmlns="http://camel.apache.org/schema/blueprint">
         <routeBuilder ref="practiceInfoRoute"/>
     </camelContext>
+    <camelContext id="setTemplateCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="setTemplateRoute"/>
+    </camelContext>
+
+
+
+
+
 </blueprint>
