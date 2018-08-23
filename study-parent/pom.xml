@@ -11,7 +11,7 @@
 
     <groupId>com.kalix.educational.study</groupId>
     <artifactId>study-parent</artifactId>
-    <name>Kalix Education Study Parent</name>
+    <name>Kalix Educational Study Parent</name>
     <modules>
         <module>educational-study-entities</module>
     </modules>

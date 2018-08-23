@@ -12,7 +12,7 @@ import javax.persistence.Transient;
  */
 
 @Entity
-@Table(name = "edu_plan_lesson_info")
+/*@Table(name = "edu_plan_lesson_info")*/
 public class LessonInfoBean extends PersistentEntity {
     private String kcdm;   // 课程代码
     private String zwmc;   // 中文名称
