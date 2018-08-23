@@ -7,20 +7,6 @@
     <jpa:enable/>
     <tx:enable-annotations/>
 
-    <!--理论课程信息dao-->
-    <bean id="lessonInfoBeanDaoImpl"
-          class="com.kalix.educational.teachingplan.dao.LessonInfoBeanDaoImpl"> <!--init-method="init">-->
-        <tx:transaction method="*" value="Required"/>
-    </bean>
-    <service id="lessonInfoBeanDao" ref="lessonInfoBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.ILessonInfoBeanDao"/>
-
-    <!--实践环节信息dao-->
-    <bean id="practiceInfoBeanDaoImpl"
-          class="com.kalix.educational.teachingplan.dao.PracticeInfoBeanDaoImpl"> <!--init-method="init">-->
-        <tx:transaction method="*" value="Required"/>
-    </bean>
-    <service id="practiceInfoBeanDao" ref="practiceInfoBeanDaoImpl" interface="com.kalix.educational.teachingplan.api.dao.IPracticeInfoBeanDao"/>
-
     <!--模板设置dao-->
     <bean id="setTemplateBeanDaoImpl"
           class="com.kalix.educational.teachingplan.dao.SetTemplateBeanDaoImpl"> <!--init-method="init">-->
