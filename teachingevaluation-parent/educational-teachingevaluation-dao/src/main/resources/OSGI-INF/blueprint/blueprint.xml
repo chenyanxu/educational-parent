@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- default-activation="lazy" -->
+<blueprint xmlns:jpa="http://aries.apache.org/xmlns/jpa/v2.0.0"
+           xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.2.0"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <jpa:enable/>
+    <tx:enable-annotations/>
+
+    <!--设置评价指标等级dao-->
+    <bean id="indexGradeBeanDaoImpl"
+          class="com.kalix.educational.teachingevaluation.dao.IndexGradeBeanDaoImpl"> <!--init-method="init">-->
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+    <service id="indexGradeBeanDao" ref="indexGradeBeanDaoImpl" interface="com.kalix.educational.teachingevaluation.api.dao.IIndexGradeBeanDao"/>
+
+
+</blueprint>
