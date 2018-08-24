@@ -4,6 +4,7 @@ import com.kalix.framework.core.api.persistence.PersistentEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * 库房
@@ -14,7 +15,9 @@ import javax.persistence.Table;
 public class BookRoomBean extends PersistentEntity {
     private String code;//代码
     private String name;//名称
-    private String sarea;//所属校区
+    private Long sarea;//所属校区
+    @Transient
+    private String sareaName;//所属校区
     private String agent;//联系人
     private String tel;//电话
     private String fax;//传真
@@ -36,12 +39,20 @@ public class BookRoomBean extends PersistentEntity {
         this.name = name;
     }
 
-    public String getSarea() {
+    public Long getSarea() {
         return sarea;
     }
 
-    public void setSarea(String sarea) {
+    public void setSarea(Long sarea) {
         this.sarea = sarea;
+    }
+
+    public String getSareaName() {
+        return sareaName;
+    }
+
+    public void setSareaName(String sareaName) {
+        this.sareaName = sareaName;
     }
 
     public String getAgent() {

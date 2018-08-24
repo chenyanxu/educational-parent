@@ -1,14 +1,8 @@
 package com.kalix.educational.teachingplan.biz;
 
-import com.kalix.admin.core.api.biz.IOrganizationBeanService;
-import com.kalix.admin.core.entities.OrganizationBean;
-import com.kalix.educational.teachingplan.api.biz.ILessonInfoBeanService;
 import com.kalix.educational.teachingplan.api.biz.ISetTemplateBeanService;
-import com.kalix.educational.teachingplan.api.dao.ILessonInfoBeanDao;
 import com.kalix.educational.teachingplan.api.dao.ISetTemplateBeanDao;
-import com.kalix.educational.teachingplan.entities.LessonInfoBean;
 import com.kalix.educational.teachingplan.entities.SetTemplateBean;
-import com.kalix.framework.core.api.persistence.JsonData;
 import com.kalix.framework.core.impl.biz.ShiroGenericBizServiceImpl;
 
 /**
