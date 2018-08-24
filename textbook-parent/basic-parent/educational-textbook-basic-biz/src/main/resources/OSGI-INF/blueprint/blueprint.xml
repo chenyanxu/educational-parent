@@ -12,17 +12,22 @@
     <reference id="handmanBeanDao" interface="com.kalix.educational.textbook.basic.api.dao.IHandmanBeanDao"/>
     <reference id="providerBeanDao" interface="com.kalix.educational.textbook.basic.api.dao.IProviderBeanDao"/>
 
+    <reference id="schoolZoneBeanService" interface="com.kalix.general.org.api.biz.ISchoolZoneBeanService"/>
+
     <bean id="publisherBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.PublisherBeanServiceImpl">
         <property name="dao" ref="publisherBeanDao"/>
     </bean>
     <bean id="bookRoomBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.BookRoomBeanServiceImpl">
         <property name="dao" ref="bookRoomBeanDao"/>
+        <property name="schoolZoneBeanService" ref="schoolZoneBeanService"/>
     </bean>
     <bean id="bookSectionBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.BookSectionBeanServiceImpl">
         <property name="dao" ref="bookSectionBeanDao"/>
     </bean>
     <bean id="bookShelfBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.BookShelfBeanServiceImpl">
         <property name="dao" ref="bookShelfBeanDao"/>
+        <property name="bookRoomBeanService" ref="bookRoomBeanServiceImpl"/>
+        <property name="schoolZoneBeanService" ref="schoolZoneBeanService"/>
     </bean>
     <bean id="buyerBeanServiceImpl" class="com.kalix.educational.textbook.basic.biz.BuyerBeanServiceImpl">
         <property name="dao" ref="buyerBeanDao"/>
