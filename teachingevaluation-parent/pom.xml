@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>educational-parent</artifactId>
+        <groupId>com.kalix.educational</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>teachingevaluation-parent</artifactId>
+    <groupId>com.kalix.educational.teachingevaluation</groupId>
+    <name>Kalix Educational Teachingevaluation Parent</name>
+    <packaging>pom</packaging>
+    <modules>
+        <module>educational-teachingevaluation-entities</module>
+        <module>educational-teachingevaluation-api</module>
+        <module>educational-teachingevaluation-biz</module>
+        <module>educational-teachingevaluation-dao</module>
+        <module>educational-teachingevaluation-rest</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.kalix.educational.teachingevaluation</groupId>
+                <artifactId>educational-teachingevaluation-entities</artifactId>
+                <version>${project.educational.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kalix.educational.teachingevaluation</groupId>
+                <artifactId>educational-teachingevaluation-api</artifactId>
+                <version>${project.educational.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

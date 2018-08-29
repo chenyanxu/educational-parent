@@ -95,6 +95,7 @@
         <module>graduation-parent</module>
         <module>gradeexamination-parent</module>
         <module>textbook-parent</module>
+        <module>teachingevaluation-parent</module>
     </modules>
 
     <!--<reporting>-->

@@ -4,6 +4,7 @@ import com.kalix.framework.core.api.persistence.PersistentEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * 书架
@@ -13,8 +14,12 @@ import javax.persistence.Table;
 @Table(name = "edu_textbook_basic_bookshelf")
 public class BookShelfBean extends PersistentEntity {
     private String code;//代码
-    private String sarea;//所属校区
-    private String rcode;//所属库房
+    private Long sarea;//所属校区
+    @Transient
+    private String sareaName;//所属校区
+    private Long rcode;//所属库房
+    @Transient
+    private String rcodeName;//所属库房
     private String bcname;//
     private String user_code;//书架号
 
@@ -26,20 +31,36 @@ public class BookShelfBean extends PersistentEntity {
         this.code = code;
     }
 
-    public String getSarea() {
+    public Long getSarea() {
         return sarea;
     }
 
-    public void setSarea(String sarea) {
+    public void setSarea(Long sarea) {
         this.sarea = sarea;
     }
 
-    public String getRcode() {
+    public String getSareaName() {
+        return sareaName;
+    }
+
+    public void setSareaName(String sareaName) {
+        this.sareaName = sareaName;
+    }
+
+    public Long getRcode() {
         return rcode;
     }
 
-    public void setRcode(String rcode) {
+    public void setRcode(Long rcode) {
         this.rcode = rcode;
+    }
+
+    public String getRcodeName() {
+        return rcodeName;
+    }
+
+    public void setRcodeName(String rcodeName) {
+        this.rcodeName = rcodeName;
     }
 
     public String getBcname() {
