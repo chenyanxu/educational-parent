@@ -18,6 +18,7 @@
         <module>educational-arrangement-dao</module>
         <module>educational-arrangement-biz</module>
         <module>educational-arrangement-rest</module>
+        <module>educational-arrangement-dto</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -31,6 +32,11 @@
             <dependency>
                 <groupId>com.kalix.educational.arrangement</groupId>
                 <artifactId>educational-arrangement-api</artifactId>
+                <version>${project.educational.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kalix.educational.arrangement</groupId>
+                <artifactId>educational-arrangement-dto</artifactId>
                 <version>${project.educational.version}</version>
             </dependency>
         </dependencies>

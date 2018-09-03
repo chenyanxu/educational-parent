@@ -21,15 +21,9 @@
             <groupId>com.kalix.educational.system.dict</groupId>
             <artifactId>educational-system-dict-entities</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.kalix.educational.system.dict</groupId>
-            <artifactId>educational-system-dict-api</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
     <properties>
         <bundle.symbolicName>com.kalix.educational.system.dict.biz</bundle.symbolicName>
     </properties>
-
 </project>

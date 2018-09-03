@@ -11,10 +11,9 @@
 
     <artifactId>core-parent</artifactId>
     <name>Kalix Educational Core Parent</name>
+    <packaging>pom</packaging>
+
     <modules>
         <module>educational-core-etc</module>
     </modules>
-
-    <packaging>pom</packaging>
-
 </project>

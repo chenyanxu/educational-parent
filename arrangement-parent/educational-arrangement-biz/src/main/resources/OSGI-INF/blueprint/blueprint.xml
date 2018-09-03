@@ -18,6 +18,7 @@
     <!--排课（课程安排）service-->
     <bean id="courseArrangementBeanServiceImpl" class="com.kalix.educational.arrangement.biz.CourseArrangementBeanServiceImpl">
         <property name="dao" ref="courseArrangementBeanDao"/>
+        <property name="schoolCalendarBeanDao" ref="schoolCalendarBeanDao"/>
     </bean>
     <service id="courseArrangementBeanService" ref="courseArrangementBeanServiceImpl"
              interface="com.kalix.educational.arrangement.api.biz.ICourseArrangementBeanService"/>

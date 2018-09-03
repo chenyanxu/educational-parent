@@ -18,6 +18,14 @@
         <property name="beanName" value="com.kalix.educational.arrangement.entities.CourseArrangementBean"/>
         <property name="rests">
             <list>
+                <bean class="com.kalix.framework.core.api.camel.CustomRest">
+                    <property name="path" value="/coursearrangements/coursetimetable"/>
+
+                    <property name="getDescription" value="查询课程表信息"/>
+                    <property name="getOutType" value="com.kalix.educational.arrangement.dto.model.CourseTimeTableDTO"/>
+                    <property name="getToUri"
+                              value="bean:coursearrangementService?method=getCourseTimeTable(${header.currentDate},${header.courseArrangementId})"/>
+                </bean>
             </list>
         </property>
     </bean>

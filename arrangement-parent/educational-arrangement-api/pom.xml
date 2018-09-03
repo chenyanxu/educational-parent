@@ -26,5 +26,9 @@
             <groupId>com.kalix.educational.arrangement</groupId>
             <artifactId>educational-arrangement-entities</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.kalix.educational.arrangement</groupId>
+            <artifactId>educational-arrangement-dto</artifactId>
+        </dependency>
     </dependencies>
 </project>

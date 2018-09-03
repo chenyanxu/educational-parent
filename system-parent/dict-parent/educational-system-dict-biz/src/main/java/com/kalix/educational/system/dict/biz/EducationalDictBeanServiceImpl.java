@@ -6,7 +6,6 @@ import com.kalix.educational.system.dict.entities.EducationalDictBean;
 import com.kalix.framework.core.api.persistence.JsonStatus;
 import com.kalix.framework.core.impl.system.BaseDictServiceImpl;
 
-
 public class EducationalDictBeanServiceImpl extends BaseDictServiceImpl<IEducationalDictBeanDao, EducationalDictBean> implements IEducationalDictBeanService {
     @Override
     public JsonStatus saveEntity(EducationalDictBean entity) {

@@ -18,7 +18,6 @@
         <bundle.symbolicName>com.kalix.educational.core.etc</bundle.symbolicName>
     </properties>
 
-
     <build>
         <plugins>
             <plugin>

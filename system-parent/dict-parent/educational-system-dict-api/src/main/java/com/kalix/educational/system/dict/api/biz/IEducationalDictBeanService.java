@@ -3,7 +3,6 @@ package com.kalix.educational.system.dict.api.biz;
 import com.kalix.educational.system.dict.entities.EducationalDictBean;
 import com.kalix.framework.core.api.system.IDictBeanService;
 
-
 /**
  * @类描述：字典服务接口类
  * @创建人：hqj

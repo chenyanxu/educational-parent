@@ -11,19 +11,16 @@
 
     <artifactId>educational-system-dict-api</artifactId>
     <name>Kalix Educational System Dict API</name>
-    <dependencies>
-        <dependency>
-            <groupId>com.kalix.educational.system.dict</groupId>
-            <artifactId>educational-system-dict-entities</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.kalix.educational.system.dict</groupId>
-            <artifactId>educational-system-dict-entities</artifactId>
-        </dependency>
-    </dependencies>
     <packaging>bundle</packaging>
 
     <properties>
         <bundle.symbolicName>com.kalix.educational.system.dict.api</bundle.symbolicName>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.kalix.educational.system.dict</groupId>
+            <artifactId>educational-system-dict-entities</artifactId>
+        </dependency>
+    </dependencies>
 </project>
